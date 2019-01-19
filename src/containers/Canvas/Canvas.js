@@ -1,7 +1,8 @@
-import React, { Component } from 'react';import styles from './Hero.css';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './Canvas.css';
 
-class Hero extends Component {
+class Canvas extends Component {
   constructor(props) {
     super(props);
     this.canvas = React.createRef();
@@ -52,15 +53,11 @@ class Hero extends Component {
   }
 
   render () {
-    return (
-      <header className={styles.header}>
-        <canvas ref={this.canvas}></canvas>
-      </header>
-    );
+    return <canvas ref={this.canvas} className={styles.canvas}></canvas>
   }
 }
 
-Hero.propTypes = {
+Canvas.propTypes = {
   matrix: PropTypes.array,
   fontSize: PropTypes.number,
   dropSpeed: PropTypes.number,
@@ -68,7 +65,7 @@ Hero.propTypes = {
   backgroundColor: PropTypes.string
 }
 
-Hero.defaultProps = {
+Canvas.defaultProps = {
   matrix: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%'.split(''),
   fontSize: 10,
   dropSpeed: 35,
@@ -76,4 +73,4 @@ Hero.defaultProps = {
   backgroundColor: 'rgba(0, 0, 0, 0.04)'
 };
 
-export default Hero;
+export default Canvas;
