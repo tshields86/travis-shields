@@ -2,8 +2,6 @@
   --color-text: #fff;
   --color-bg: #000;
   --color-link: #555;
-  /* --color-link-hover: #0F0; */
-  /* --color-link-hover: #FF7400; */
   --color-link-hover: #00FFFF;
   --color-info: #f7cfb9;
   --glitch-width: 100vw;
@@ -73,6 +71,11 @@
   animation-duration: var(--time-anim);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.noGlitch .glitch__title,
+.noGlitch .glitch__text {
+  animation-name: none;
 }
 
 @keyframes glitch-text {

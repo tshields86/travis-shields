@@ -69,9 +69,7 @@ Canvas.defaultProps = {
   matrix: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%'.split(''),
   fontSize: 10,
   dropSpeed: 35,
-  // fontColor: '#0F0',
   fontColor: 'rgba(0, 255, 0, 0.5)',
-  // backgroundColor: 'rgba(0, 0, 0, 0.04)'
   backgroundColor: 'rgba(0, 0, 0, 0.007)'
 };
 

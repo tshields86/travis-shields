@@ -17,11 +17,9 @@ class Layout extends Component {
 
   render () {
     return (
-      <>
-        <main className={styles.main}>
-          {this.props.children}
-        </main>
-      </>
+      <div className={styles.root}>
+        {this.props.children}
+      </div>
     );
   }
 }
