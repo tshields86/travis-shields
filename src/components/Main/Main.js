@@ -1,5 +1,5 @@
 import React from 'react';
-import { styles } from 'ansi-colors';
+import styles from './Main.css';
 
 const Main = props => {
 

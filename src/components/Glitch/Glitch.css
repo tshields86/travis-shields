@@ -31,7 +31,7 @@
 
 .glitch__area {
   position: relative;
-  top: 10%;
+  top: 10vh;
   color: #fff;
   animation: fadein 4s;
 }
@@ -76,6 +76,10 @@
 .noGlitch .glitch__title,
 .noGlitch .glitch__text {
   animation-name: none;
+}
+
+.noGlitch .glitch__area {
+  top: calc(10vh + 2.5rem);
 }
 
 @keyframes glitch-text {

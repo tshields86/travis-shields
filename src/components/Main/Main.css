@@ -1,3 +1,7 @@
 .root {
-  
+  position: relative;
+  padding: 5rem 3rem 3rem;
+  background: #fff;
+  height: 1000px;
+  width: 100%;
 }
