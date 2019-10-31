@@ -392,12 +392,29 @@ module.exports = function(webpackEnv) {
             {
               test: cssRegex,
               exclude: cssModuleRegex,
-              use: getStyleLoaders({
-                importLoaders: 1,
-                modules: true,
-                localIdentName: '[name]__[local]__[hash:base64:5]',
-                sourceMap: isEnvProduction && shouldUseSourceMap,
-              }),
+              use: [
+                {
+                  loader: 'style-loader',
+                },
+                {
+                  loader: 'css-loader',
+                  options: {
+                    // CSS Loader https://github.com/webpack/css-loader
+                    importLoaders: 1,
+                    sourceMap: isEnvDevelopment,
+                    // CSS Modules https://github.com/css-modules/css-modules
+                    modules: true,
+                    camelCase: true,
+                    localIdentName: isEnvDevelopment ? '[name]-[local]-[hash:base64:5]' : '[hash:base64:5]',
+                    // CSS Nano http://cssnano.co/options/
+                    minimize: isEnvProduction,
+                    discardComments: { removeAll: true },
+                  },
+                },
+                {
+                  loader: 'postcss-loader'
+                },
+              ],
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.
