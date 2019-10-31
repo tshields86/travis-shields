@@ -1,85 +1,67 @@
-.glitch {
-  --color-text: #fff;
-  --color-bg: #000;
-  --color-link: #555;
-  --color-link-hover: #00FFFF;
-  --color-info: #f7cfb9;
-  --glitch-width: 100vw;
-  --glitch-height: 100vh;
-  --gap-horizontal: 10px;
-  --gap-vertical: 5px;
+:root {
   --time-anim: 4s;
   --delay-anim: 2s;
-  --blend-mode-1: none;
-  --blend-mode-2: overlay;
-  --blend-mode-3: none;
-  --blend-mode-4: none;
-  --blend-mode-5: overlay;
-  --blend-color-1: transparent;
-  --blend-color-2: #7d948e;
-  --blend-color-3: transparent;
-  --blend-color-4: transparent;
-  --blend-color-5: #af4949;
+}
 
+.glitch {
   position: relative;
   display: grid;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   min-height: 100%;
-}
 
-.glitch__area {
-  position: relative;
-  top: 10vh;
-  color: #fff;
-  animation: fadein 4s;
-}
+  &__area {
+    position: relative;
+    top: 10vh;
+    color: var(--color-white);
+    animation: fadein 4s;
 
-.glitch__title {
-  font-family: 'Def Con Zero Grad Ital';
-  padding-right: 2vw;
-  font-size: 10vw;
-  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
-}
+    .glitch__off & {
+      top: calc(10vh + 2.5rem);
+    }
+  }
 
-.glitch__title span {
-  color: var(--color-link-hover);
-}
+  &__title {
+    font-family: var(--font-def-con);
+    padding-right: 2vw;
+    font-size: 10vw;
+    animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
 
-.glitch__text {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2.4rem;
-  padding-left: 2vw;
-  max-width: 50rem;
-  font-weight: bold;
-  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.25);
-}
+    span {
+      color: var(--color-light-blue);
+    }
+  }
 
-.glitch__text span {
-  color: var(--color-link-hover);
-}
+  &__text {
+    font-family: var(--font-courier);
+    font-size: 2.4rem;
+    padding-left: 2vw;
+    max-width: 50rem;
+    font-weight: bold;
+    animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.25);
 
-.glitch__blink {
-  margin-right: 5px;
-  animation: blink 1s step-end infinite;
-}
+    span {
+      color: var(--color-light-blue);
+    }
+  }
 
-.glitch__title,
-.glitch__text {
-  animation-name: glitch-text;
-  animation-duration: var(--time-anim);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
+  &__blink {
+    margin-right: 5px;
+    animation: blink 1s step-end infinite;
+  }
 
-.noGlitch .glitch__title,
-.noGlitch .glitch__text {
-  animation-name: none;
-}
+  &__title,
+  &__text {
+    animation-name: glitch-text;
+    animation-duration: var(--time-anim);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 
-.noGlitch .glitch__area {
-  top: calc(10vh + 2.5rem);
+    .glitch__off & {
+      animation-name: none;
+    }
+  }
 }
 
 @keyframes glitch-text {
