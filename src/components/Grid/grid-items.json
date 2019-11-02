@@ -1,0 +1,152 @@
+[
+  {
+    "icon": "javascript",
+    "label": "JavaScript",
+    "type": "plain"
+  },
+  {
+    "icon": "react",
+    "label": "React",
+    "type": "original"
+  },
+  {
+    "icon": "nodejs",
+    "label": "Node",
+    "type": "plain"
+  },
+  {
+    "icon": "express",
+    "label": "Express",
+    "type": "original"
+  },
+  {
+    "icon": "mocha",
+    "label": "Mocha",
+    "type": "plain"
+  },
+  {
+    "icon": "angularjs",
+    "label": "AngularJS",
+    "type": "plain"
+  },
+  {
+    "icon": "ruby",
+    "label": "Ruby",
+    "type": "plain"
+  },
+  {
+    "icon": "rails",
+    "label": "Rails",
+    "type": "plain"
+  },
+  {
+    "icon": "php",
+    "label": "PHP",
+    "type": "plain"
+  },
+  {
+    "icon": "python",
+    "label": "Python",
+    "type": "plain"
+  },
+  {
+    "icon": "mongodb",
+    "label": "MongoDB",
+    "type": "plain"
+  },
+  {
+    "icon": "redis",
+    "label": "Redis",
+    "type": "plain"
+  },
+  {
+    "icon": "mysql",
+    "label": "MySQL",
+    "type": "plain"
+  },
+  {
+    "icon": "postgresql",
+    "label": "PostgreSQL",
+    "type": "plain"
+  },
+  {
+    "icon": "git",
+    "label": "Git",
+    "type": "plain"
+  },
+  {
+    "icon": "github",
+    "label": "GitHub",
+    "type": "plain"
+  },
+  {
+    "icon": "webpack",
+    "label": "Webpack",
+    "type": "plain"
+  },
+  {
+    "icon": "gulp",
+    "label": "Gulp",
+    "type": "plain"
+  },
+  {
+    "icon": "amazonwebservices",
+    "label": "AWS",
+    "type": "original"
+  },
+  {
+    "icon": "docker",
+    "label": "Docker",
+    "type": "plain"
+  },
+  {
+    "icon": "heroku",
+    "label": "Heroku",
+    "type": "original"
+  },
+  {
+    "icon": "wordpress",
+    "label": "Wordpress",
+    "type": "plain"
+  },
+  {
+    "icon": "drupal",
+    "label": "Drupal",
+    "type": "plain"
+  },
+  {
+    "icon": "jquery",
+    "label": "jQuery",
+    "type": "plain"
+  },
+  {
+    "icon": "html5",
+    "label": "HTML5",
+    "type": "plain"
+  },
+  {
+    "icon": "css3",
+    "label": "CSS3",
+    "type": "plain"
+  },
+  {
+    "icon": "sass",
+    "label": "Sass",
+    "type": "original"
+  },
+  {
+    "icon": "bootstrap",
+    "label": "Bootstrap",
+    "type": "plain"
+  },
+  {
+    "icon": "photoshop",
+    "label": "Photoshop",
+    "type": "plain"
+  },
+  {
+    "icon": "illustrator",
+    "label": "Illustrator",
+    "type": "plain"
+  }
+]

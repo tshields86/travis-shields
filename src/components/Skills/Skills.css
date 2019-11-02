@@ -1,6 +1,18 @@
-.root {
+.skills {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &__items {
+    margin-top: 3rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    grid-gap: 1rem;
+  }
+
+  &__icon {
+    margin-bottom: 1.5rem;
+  }
 }

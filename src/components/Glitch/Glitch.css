@@ -16,10 +16,6 @@
     top: 10vh;
     color: var(--color-white);
     animation: fadein 4s;
-
-    .glitch__off & {
-      top: calc(10vh + 2.5rem);
-    }
   }
 
   &__title {

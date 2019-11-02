@@ -8,11 +8,11 @@ import styles from './Hero.css';
 
 const Hero = ({ hasEntered, onEnter }) => (
   <header className={cx(styles.header, { [styles['has-gradient']]: hasEntered })}>
-    {!hasEntered && <Canvas />}
+    {/* {!hasEntered && <Canvas />} */}
     <Glitch hasEntered={hasEntered} />
     {!hasEntered && 
       <Button
-        label="_enter"
+        label="enter"
         onClick={() => onEnter()}
       />}
   </header>

@@ -11,6 +11,10 @@ import {
 
 const size = '4.5rem';
 const color = '#01579B';
+const iconProps = {
+  color,
+  size
+};
 const linkProps = {
   className: styles.social__item,
   target: '_blank'
@@ -19,19 +23,19 @@ const linkProps = {
 const Social = () => (
   <div className={styles.social}>
     <Link {...linkProps} src="https://github.com/tshields86">
-      <FaGithubSquare color={color} size={size} />
+      <FaGithubSquare {...iconProps} />
     </Link>
     <Link {...linkProps} src="https://www.linkedin.com/in/trshields">
-      <FaLinkedin color={color} size={size} />
+      <FaLinkedin {...iconProps} />
     </Link>
     <Link {...linkProps} src="https://twitter.com/tshields86">
-      <FaTwitterSquare color={color} size={size} />
+      <FaTwitterSquare {...iconProps} />
     </Link>
     <Link {...linkProps} src="https://angel.co/travis-shields">
-      <FaAngellist color={color} size={size} />
+      <FaAngellist {...iconProps} />
     </Link>
     <Link {...linkProps} src="https://stackoverflow.com/users/6272401/tshields86">
-      <FaStackOverflow color={color} size={size} />
+      <FaStackOverflow {...iconProps} />
     </Link>
   </div>
 );

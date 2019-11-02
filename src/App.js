@@ -12,7 +12,8 @@ const App = () => {
         hasEntered={hasEntered}
         onEnter={() => setHasEntered(true)}
       />
-      {hasEntered && <Main />}
+      {/* {hasEntered && <Main />} */}
+      <Main />
     </Layout>
   );
 };
