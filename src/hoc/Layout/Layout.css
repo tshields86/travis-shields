@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 @font-face {
   font-family: 'Def Con Zero Grad';
   src: url('./fonts/defconzerograd.ttf')  format('truetype');
@@ -7,8 +9,6 @@
   font-family: 'Def Con Zero Grad Ital';
   src: url('./fonts/defconzerogradital.ttf')  format('truetype');
 }
-
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
   --color-black: #000;

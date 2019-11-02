@@ -8,7 +8,12 @@ import styles from './Hero.css';
 
 const Hero = ({ hasEntered, onEnter }) => (
   <header className={cx(styles.header, { [styles['has-gradient']]: hasEntered })}>
-    {/* {!hasEntered && <Canvas />} */}
+    <img
+      src={require('../../img/hero--large.jpg')}
+      alt="Manhattan bridge in Dumbo"
+      className={styles.header__img}
+    />
+    {!hasEntered && <Canvas />}
     <Glitch hasEntered={hasEntered} />
     {!hasEntered && 
       <Button

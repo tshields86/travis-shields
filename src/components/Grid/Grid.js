@@ -6,7 +6,7 @@ import styles from './Grid.css';
 const Grid = () => (
   <div className={styles.root}>
     {gridItems.map(({ icon, label, type }) => (
-      <GridItem icon={icon} label={label} type={type}></GridItem>
+      <GridItem icon={icon} key={icon} label={label} type={type}></GridItem>
     ))}
   </div>
 );

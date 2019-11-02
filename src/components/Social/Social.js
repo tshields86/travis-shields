@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './Social.css';
 import Link from '../Link/Link';
+import styles from './Social.css';
 import {
   FaAngellist,
   FaGithubSquare,
