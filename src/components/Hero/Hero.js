@@ -7,16 +7,17 @@ import Button from '../Button/Button';
 import styles from './Hero.css';
 
 const Hero = ({ hasEntered, onEnter }) => (
-  <header className={cx(styles.header, { [styles['has-gradient']]: hasEntered })}>
+  <header className={cx(styles.hero, { [styles['has-gradient']]: hasEntered })}>
     <img
       src={require('../../img/hero--large.jpg')}
       alt="Manhattan bridge in Dumbo"
-      className={styles.header__img}
+      className={styles.hero__img}
     />
     {!hasEntered && <Canvas />}
     <Glitch hasEntered={hasEntered} />
     {!hasEntered && 
       <Button
+        className={styles.hero__btn}
         label="enter"
         onClick={() => onEnter()}
       />}

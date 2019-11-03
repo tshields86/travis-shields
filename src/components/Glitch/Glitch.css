@@ -13,7 +13,6 @@
 
   &__area {
     position: relative;
-    top: 10vh;
     color: var(--color-white);
     animation: fadein 4s;
   }
