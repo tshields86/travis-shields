@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from '../Header/Header';
 import { Parallax } from 'react-parallax';
-import styles from './About.css';
 import { FaCoffee } from 'react-icons/fa';
+import { AWS_S3_LOCATION } from '../../config';
+import styles from './About.css';
 
 const size = '1.8rem';
 const color = '#FFF';
@@ -16,7 +17,7 @@ const About = () => (
   <section className={styles.about}>
     <Parallax
       className={styles.about__parallax}
-      bgImage={require('../../img/bridge--dark.jpg')}
+      bgImage={`${AWS_S3_LOCATION}images/bridge--dark.jpg`}
       bgImageAlt="Brooklyn bridge at night with lights"
       strength={500}
     >

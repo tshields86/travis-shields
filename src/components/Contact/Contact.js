@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './Contact.css';
 import Link from '../Link/Link';
 import { MdEmail, MdPhoneIphone } from 'react-icons/md';
 import { IoIosDocument } from 'react-icons/io';
+import { AWS_S3_LOCATION } from '../../config';
+import styles from './Contact.css';
 
 const size = '5rem';
 const color = '#000';
@@ -19,7 +20,7 @@ const Contact = () => (
   <div className={styles.contact}>
     <div className={styles.contact__item}>
       <IoIosDocument {...iconProps} />
-      <Link {...linkProps} label="Resume" src="https://travis-shields-assets.s3.us-east-2.amazonaws.com/travis_shields_resume_2019.pdf" />
+      <Link {...linkProps} label="Resume" src={`${AWS_S3_LOCATION}pdf/travis_shields_resume_2019.pdf`} />
     </div>
     <div className={styles.contact__item}>
       <MdPhoneIphone {...iconProps} />
