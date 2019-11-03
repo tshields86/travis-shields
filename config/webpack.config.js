@@ -399,16 +399,9 @@ module.exports = function(webpackEnv) {
                 {
                   loader: 'css-loader',
                   options: {
-                    // CSS Loader https://github.com/webpack/css-loader
-                    importLoaders: 1,
-                    sourceMap: isEnvDevelopment,
-                    // CSS Modules https://github.com/css-modules/css-modules
-                    modules: true,
-                    camelCase: true,
-                    localIdentName: isEnvDevelopment ? '[name]-[local]-[hash:base64:5]' : '[hash:base64:5]',
-                    // CSS Nano http://cssnano.co/options/
-                    minimize: isEnvProduction,
-                    discardComments: { removeAll: true },
+                    modules: {
+                      localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                    },
                   },
                 },
                 {
