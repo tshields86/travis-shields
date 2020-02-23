@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'Def Con Zero Grad';
+  src: url('./fonts/defconzerograd.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Def Con Zero Grad Ital';
+  src: url('./fonts/defconzerogradital.ttf')  format('truetype');
+}
+
 *,
 *::after,
 *::before {
@@ -14,6 +26,15 @@ body {
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+
+  :global(#root) {
+    height: 100%;
+  }
+}
+
 ::selection {
   /* background-color: $color-primary;
   color: $color-white; */
@@ -28,4 +49,18 @@ p {
 
 section {
   margin-bottom: 3rem;
+}
+
+:root {
+  --color-black: #000;
+  --color-blue: #01579B;
+  --color-light-blue: #00FFFF;
+  --color-link: #01579B;
+  --color-white: #FFF;
+
+  --font-courier: 'Courier New', Courier, monospace;
+  --font-def-con: 'Def Con Zero Grad Ital';
+  --font-roboto: 'Roboto', sans-serif;
+
+  font-family: var(--font-roboto);
 }
