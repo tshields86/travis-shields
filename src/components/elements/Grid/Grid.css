@@ -3,6 +3,12 @@
   max-width: 80rem;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
   grid-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .root {
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  }
 }

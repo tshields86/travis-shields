@@ -15,7 +15,7 @@
 
   &__btn {
     position: absolute;
-    color: #00FFFF;
+    color: var(--color-gold);
     background: none;
     border: none;
     padding: 10px 20px;
