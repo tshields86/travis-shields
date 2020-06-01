@@ -25,7 +25,7 @@ const About = () => (
         <Header text="Hello World" />
         <p>
           My name is Travis Shields.
-          I am a full-stack engineer based out of New York City.
+          I am a full-stack software engineer based out of New York City.
           I am originally from Philadelphia and went to the University of Pennsylvania.
           My background is in finance and I once had a knack for creating complex financial models.
           Now as a developer, I am building dynamic web applications and am currently working at The Madison Square Garden Company.

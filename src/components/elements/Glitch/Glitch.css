@@ -24,6 +24,7 @@
     font-style: italic;
     padding-right: 1vw;
     font-size: 11vw;
+    text-transform: uppercase;
     animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
 
     span {
@@ -37,6 +38,7 @@
     padding-left: 1vw;
     max-width: 50rem;
     font-weight: bold;
+    text-transform: lowercase;
     animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.25);
 
     span {
