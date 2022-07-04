@@ -33,13 +33,13 @@ const Skills = () => (
           label="Ready to Go"
           icon={<FaStopwatch {...iconProps} />}
         >
-          I work in an agile environment and use Git/Github for version control and deploy with AWS and Heroku.
+          I work in an agile environment and use Git/Github for version control and deploy with AWS.
         </SkillsItem>
         <SkillsItem
           label="Up to Date"
           icon={<FaTerminal {...iconProps} />}
         >
-          I keep on my toes with cutting-edge languages such as JavaScript, Python, PHP, and Ruby.
+          I keep on my toes with cutting-edge languages such as JavaScript, Ruby, Python, and PHP.
         </SkillsItem>
       </div>
       <Grid />

@@ -1,17 +1,8 @@
 import React from 'react';
 import { Header } from '~elements';
 import { Parallax } from 'react-parallax';
-import { FaCoffee } from 'react-icons/fa';
 import { AWS_S3_LOCATION } from '~src/config';
 import styles from './About.css';
-
-const size = '1.8rem';
-const color = '#FFF';
-const iconProps = {
-  className: styles.about__icon,
-  color,
-  size
-};
 
 const About = () => (
   <section className={styles.about}>
@@ -22,16 +13,12 @@ const About = () => (
       strength={500}
     >
       <div className={styles.about__content}>
-        <Header text="Hello World" />
+        <Header text="Professional Profile" />
         <p>
-          My name is Travis Shields.
-          I am a full-stack software engineer based out of New York City.
-          I am originally from Philadelphia and went to the University of Pennsylvania.
-          My background is in finance and I once had a knack for creating complex financial models.
-          Now as a developer, I am building dynamic web applications and am currently working at The Madison Square Garden Company.
-          I enjoy programming in many languages and have contributed to multiple projects there.
-          When I'm not building apps, you can catch me discovering new parts of the city, listening to live music or trying to find the best cup of coffee.
-          <FaCoffee {...iconProps} />
+          Hands-on technical leader with exceptional success in developing web applications for enterprise companies. 
+          Determined problem solver employing analytical, technical, and design skills to oversee the full software development lifecycle. 
+          Acknowledged for tenacious leadership and project management skills while leading cross-functional teams in dynamic work environments. 
+          Record of effective full stack engineering in enterprise web development.
         </p>
       </div>
     </Parallax>

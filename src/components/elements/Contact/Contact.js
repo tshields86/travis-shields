@@ -20,7 +20,7 @@ const Contact = () => (
   <div className={styles.contact}>
     <div className={styles.contact__item}>
       <IoIosDocument {...iconProps} />
-      <Link {...linkProps} label="Resume" src={`${AWS_S3_LOCATION}pdf/travis_shields_resume_2020.pdf`} />
+      <Link {...linkProps} label="Resume" src={`${AWS_S3_LOCATION}pdf/travis_shields_resume_2022.pdf`} />
     </div>
     <div className={styles.contact__item}>
       <MdPhoneIphone {...iconProps} />

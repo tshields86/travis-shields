@@ -5,6 +5,11 @@
     "type": "plain"
   },
   {
+    "icon": "typescript",
+    "label": "TypeScript",
+    "type": "plain"
+  },
+  {
     "icon": "react",
     "label": "React",
     "type": "original"
@@ -15,13 +20,8 @@
     "type": "plain"
   },
   {
-    "icon": "express",
-    "label": "Express",
-    "type": "original"
-  },
-  {
-    "icon": "mocha",
-    "label": "Mocha",
+    "icon": "jest",
+    "label": "Jest",
     "type": "plain"
   },
   {
@@ -85,8 +85,8 @@
     "type": "plain"
   },
   {
-    "icon": "gulp",
-    "label": "Gulp",
+    "icon": "wordpress",
+    "label": "Wordpress",
     "type": "plain"
   },
   {
@@ -97,26 +97,6 @@
   {
     "icon": "docker",
     "label": "Docker",
-    "type": "plain"
-  },
-  {
-    "icon": "heroku",
-    "label": "Heroku",
-    "type": "original"
-  },
-  {
-    "icon": "wordpress",
-    "label": "Wordpress",
-    "type": "plain"
-  },
-  {
-    "icon": "drupal",
-    "label": "Drupal",
-    "type": "plain"
-  },
-  {
-    "icon": "jquery",
-    "label": "jQuery",
     "type": "plain"
   },
   {
@@ -135,18 +115,8 @@
     "type": "original"
   },
   {
-    "icon": "bootstrap",
-    "label": "Bootstrap",
-    "type": "plain"
-  },
-  {
-    "icon": "photoshop",
-    "label": "Photoshop",
-    "type": "plain"
-  },
-  {
-    "icon": "illustrator",
-    "label": "Illustrator",
+    "icon": "tailwindcss",
+    "label": "Tailwind CSS",
     "type": "plain"
   }
 ]
