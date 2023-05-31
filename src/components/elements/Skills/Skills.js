@@ -21,25 +21,25 @@ const Skills = () => (
           label="Powerful Frameworks"
           icon={<FaCubes {...iconProps} />}
         >
-          I develop with frameworks and environments such as React, Redux, Node, Express, and Ruby on Rails.
+          Leveraging industry-leading frameworks and environments, such as React, Redux, Node, Express, and Ruby on Rails, to build robust and efficient applications.
         </SkillsItem>
         <SkillsItem
           label="Secure Storage"
           icon={<FaDatabase {...iconProps} />}
         >
-          I employ user authentication and maintain MongoDB, MySQL, PostgreSQL and Redis databases.
+          Implementing user authentication protocols and managing various databases, including MongoDB, MySQL, PostgreSQL, and Redis, to ensure secure and efficient data storage.
         </SkillsItem>
         <SkillsItem
           label="Ready to Go"
           icon={<FaStopwatch {...iconProps} />}
         >
-          I work in an agile environment and use Git/Github for version control and deploy with AWS.
+          Working within Agile methodologies to deliver rapid, incremental value, utilizing Git/Github for version control, and employing AWS for seamless deployment and scalability.
         </SkillsItem>
         <SkillsItem
           label="Up to Date"
           icon={<FaTerminal {...iconProps} />}
         >
-          I keep on my toes with cutting-edge languages such as JavaScript, Ruby, Python, and PHP.
+          Staying abreast of the latest industry trends, developing skills in languages such as JavaScript, Ruby, Python, and PHP to deliver modern and efficient solutions.
         </SkillsItem>
       </div>
       <Grid />

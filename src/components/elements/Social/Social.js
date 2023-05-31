@@ -2,7 +2,6 @@ import React from 'react';
 import Link from '../Link/Link';
 import styles from './Social.css';
 import {
-  FaAngellist,
   FaGithubSquare,
   FaLinkedin,
   FaStackOverflow,
@@ -30,9 +29,6 @@ const Social = () => (
     </Link>
     <Link {...linkProps} src="https://twitter.com/tshields86">
       <FaTwitterSquare {...iconProps} />
-    </Link>
-    <Link {...linkProps} src="https://angel.co/travis-shields">
-      <FaAngellist {...iconProps} />
     </Link>
     <Link {...linkProps} src="https://stackoverflow.com/users/6272401/tshields86">
       <FaStackOverflow {...iconProps} />

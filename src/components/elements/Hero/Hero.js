@@ -9,7 +9,7 @@ import styles from './Hero.css';
 const Hero = ({ hasEntered, onEnter }) => (
   <header className={cx(styles.hero, { [styles['has-gradient']]: hasEntered })}>
     <img
-      src={`${AWS_S3_LOCATION}images/hero--large.jpg`}
+      src={`${AWS_S3_LOCATION}images/hero--workspace--large.jpg`}
       alt="Manhattan bridge in Dumbo"
       className={styles.hero__img}
     />
