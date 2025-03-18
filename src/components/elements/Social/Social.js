@@ -27,12 +27,12 @@ const Social = () => (
     <Link {...linkProps} src="https://www.linkedin.com/in/trshields">
       <FaLinkedin {...iconProps} />
     </Link>
-    <Link {...linkProps} src="https://twitter.com/tshields86">
+    {/* <Link {...linkProps} src="https://twitter.com/tshields86">
       <FaTwitterSquare {...iconProps} />
     </Link>
     <Link {...linkProps} src="https://stackoverflow.com/users/6272401/tshields86">
       <FaStackOverflow {...iconProps} />
-    </Link>
+    </Link> */}
   </div>
 );
 
