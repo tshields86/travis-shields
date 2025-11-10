@@ -6,7 +6,7 @@ Personal portfolio website for Travis Shields, Director of Engineering at Vimeo.
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 with App Router
+- **Framework:** Next.js 15 with App Router
 - **UI Library:** React 19
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS v3

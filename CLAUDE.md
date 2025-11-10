@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Travis Shields (Director of Engineering at Vimeo) built with Next.js 16, React 19, TypeScript, and Tailwind CSS v3. Deployed via AWS Amplify.
+Personal portfolio website for Travis Shields (Director of Engineering at Vimeo) built with Next.js 15, React 19, TypeScript, and Tailwind CSS v3. Deployed via AWS Amplify.
 
 ## Development Commands
 
@@ -31,7 +31,7 @@ pnpm run lint
 ## Architecture
 
 ### Tech Stack
-- **Framework**: Next.js 16 with App Router
+- **Framework**: Next.js 15 with App Router
 - **UI Library**: React 19
 - **Styling**: Tailwind CSS v3
 - **Animations**: Framer Motion
