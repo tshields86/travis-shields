@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Travis Shields (Director of Engineering at Vimeo) built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. Deployed via AWS Amplify.
+Personal portfolio website for Travis Shields (Director of Engineering at Vimeo) built with Next.js 16, React 19, TypeScript, and Tailwind CSS v3. Deployed via AWS Amplify.
 
 ## Development Commands
 
@@ -33,7 +33,7 @@ pnpm run lint
 ### Tech Stack
 - **Framework**: Next.js 16 with App Router
 - **UI Library**: React 19
-- **Styling**: Tailwind CSS v4 (PostCSS plugin-based)
+- **Styling**: Tailwind CSS v3
 - **Animations**: Framer Motion
 - **Theme Management**: next-themes (class-based dark mode)
 - **Forms**: React Hook Form + Zod validation
@@ -45,7 +45,7 @@ pnpm run lint
 app/
   layout.tsx          # Root layout with ThemeProvider, fonts, metadata
   page.tsx            # Home page (renders Hero, About, Skills, Contact)
-  globals.css         # Global styles + Tailwind v4 dark mode config
+  globals.css         # Global styles + Tailwind dark mode config
 components/
   ThemeProvider.tsx   # next-themes wrapper
   ThemeToggle.tsx     # Dark/light mode toggle button
@@ -67,7 +67,7 @@ components/
 
 **Theme System**:
 - Uses `next-themes` with `attribute="class"` mode
-- Tailwind CSS v4 requires `@custom-variant dark (&:where(.dark, .dark *));` in `globals.css` for class-based dark mode
+- Tailwind CSS v3 configured with `darkMode: "class"` in `tailwind.config.ts`
 - Theme persists in localStorage
 - Components use `dark:` variant for styling (e.g., `dark:bg-gray-950`)
 
@@ -77,11 +77,10 @@ components/
 
 ## Styling Conventions
 
-### Tailwind CSS v4 Specifics
-- Import: `@import "tailwindcss";` in `globals.css`
-- Dark mode requires custom variant declaration (see Theme System above)
-- PostCSS config uses `@tailwindcss/postcss` plugin
-- No `tailwind.config.js` needed (CSS-first configuration)
+### Tailwind CSS v3 Configuration
+- Standard Tailwind directives in `globals.css`: `@tailwind base; @tailwind components; @tailwind utilities;`
+- Config file: `tailwind.config.ts` with content paths and `darkMode: "class"`
+- PostCSS config uses `tailwindcss` and `autoprefixer` plugins
 
 ### Color Palette
 - Primary: Blue (blue-600/blue-400 for dark mode)
