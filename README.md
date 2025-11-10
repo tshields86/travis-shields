@@ -1,38 +1,82 @@
-# Travis Shields' Website
+# Travis Shields
 
-[travis-shields.com](https://www.travis-shields.com/)
+Personal portfolio website for Travis Shields, Director of Engineering at Vimeo.
+
+**Live Site:** [travis-shields.com](https://www.travis-shields.com/)
+
+## Tech Stack
+
+- **Framework:** Next.js 16 with App Router
+- **UI Library:** React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Theme:** next-themes (dark/light mode)
+- **Forms:** React Hook Form + Zod validation
+- **Fonts:** Geist Sans & Geist Mono
+- **Deployment:** AWS Amplify
+
+## Prerequisites
+
+- **Node.js:** v24.11.0 (enforced via `.nvmrc`)
+- **Package Manager:** pnpm >=10.0.0
+
+Use `nvm use` to automatically switch to the correct Node version.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Development server
+pnpm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Production build
+pnpm run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start production server
+pnpm run start
 
-## Deploy on Vercel
+# Lint code
+pnpm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+  layout.tsx          # Root layout with theme provider
+  page.tsx            # Home page
+  globals.css         # Global styles + Tailwind config
+components/
+  Hero.tsx            # Landing section
+  About.tsx           # Professional background
+  Skills.tsx          # Technical skills
+  Contact.tsx         # Contact form
+  Header.tsx          # Navigation header
+  Footer.tsx          # Footer
+  ThemeProvider.tsx   # Theme context
+  ThemeToggle.tsx     # Dark/light mode toggle
+```
+
+## Deployment
+
+This site is automatically deployed via AWS Amplify on push to the `master` branch. The deployment configuration is defined in `amplify.yml`.
+
+## License
+
+© 2025 Travis Shields. All rights reserved.
