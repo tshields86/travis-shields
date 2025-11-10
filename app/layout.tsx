@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   description: "Director of Engineering at Vimeo. Building high-performing engineering teams and modern platforms that deliver measurable business impact.",
   keywords: ["Engineering Leadership", "Director of Engineering", "Platform Architecture", "Next.js", "React", "TypeScript"],
   authors: [{ name: "Travis Shields" }],
-  icons: {
-    icon: "/favicon-96x96.png",
-  },
   openGraph: {
     title: "Travis Shields | Director of Engineering",
     description: "Building high-performing engineering teams and modern platforms that deliver measurable business impact.",
