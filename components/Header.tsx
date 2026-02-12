@@ -34,6 +34,12 @@ export function Header() {
             Skills
           </button>
           <button
+            onClick={() => scrollToSection('projects')}
+            className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            Projects
+          </button>
+          <button
             onClick={() => scrollToSection('contact')}
             className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
