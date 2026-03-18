@@ -66,6 +66,15 @@ const sideProjects: Project[] = [
     github: 'https://github.com/tshields86/breezlist',
   },
   {
+    name: 'Serpent Surge',
+    role: 'Creator',
+    description:
+      'Roguelike reimagining of Snake with wave-based arena progression, 10 synergizing power-ups, hazards, and retro CRT aesthetics. Features global leaderboards, daily challenges, and mobile support via Capacitor.',
+    tech: ['TypeScript', 'HTML5 Canvas', 'Vite', 'Firebase', 'Capacitor', 'Tone.js', 'PWA'],
+    link: 'https://serpent-surge.vercel.app/',
+    github: 'https://github.com/tshields86/serpent-surge',
+  },
+  {
     name: 'DStructures.js',
     role: 'Creator',
     description:
