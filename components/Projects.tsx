@@ -48,13 +48,13 @@ const professionalWork: Project[] = [
 
 const sideProjects: Project[] = [
   {
-    name: 'BBQCopilot',
+    name: 'PollPotato',
     role: 'Creator',
     description:
-      'AI-powered BBQ app that generates equipment-specific recipes, prep guides, and real-time cook timelines with streaming AI recipe generation and natural language input parsing.',
-    tech: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'Claude API'],
-    link: 'https://www.bbqcopilot.com/',
-    github: 'https://github.com/tshields86/bbqcopilot',
+      'Mobile-first polling app — ask a question, share one link, and watch the group vote in real time. Anonymous voting by default, with light/dark mode and a playful potato mascot.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Drizzle', 'Neon', 'Cloudflare'],
+    link: 'https://www.pollpotato.com',
+    github: 'https://github.com/tshields86/poll-potato',
   },
   {
     name: 'Breezlist',
@@ -73,6 +73,15 @@ const sideProjects: Project[] = [
     tech: ['TypeScript', 'HTML5 Canvas', 'Vite', 'Firebase', 'Capacitor', 'Tone.js', 'PWA'],
     link: 'https://serpentsurge.vercel.app/',
     github: 'https://github.com/tshields86/serpent-surge',
+  },
+  {
+    name: 'BBQCopilot',
+    role: 'Creator',
+    description:
+      'AI-powered BBQ app that generates equipment-specific recipes, prep guides, and real-time cook timelines with streaming AI recipe generation and natural language input parsing.',
+    tech: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'Claude API'],
+    link: 'https://www.bbqcopilot.com/',
+    github: 'https://github.com/tshields86/bbqcopilot',
   },
   {
     name: 'DStructures.js',
