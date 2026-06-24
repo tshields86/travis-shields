@@ -67,7 +67,7 @@ export function Hero() {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
+              className="flex-1 sm:flex-none text-center whitespace-nowrap px-8 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
             >
               Get in Touch
             </button>
@@ -75,7 +75,7 @@ export function Hero() {
               href="https://www.linkedin.com/in/trshields"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 border-2 border-gray-300 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-500 rounded-lg font-medium transition-colors"
+              className="flex-1 sm:flex-none text-center whitespace-nowrap px-8 py-3 border-2 border-gray-300 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-500 rounded-lg font-medium transition-colors"
             >
               View LinkedIn
             </a>
