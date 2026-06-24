@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git Conventions
+
+- Do NOT add a `Co-Authored-By: Claude` line or any Claude Code signature to commit messages.
+
 ## Project Overview
 
 Personal portfolio website for Travis Shields (Director of Engineering at Vimeo) built with Next.js 15, React 19, TypeScript, and Tailwind CSS v3. Deployed via AWS Amplify.
