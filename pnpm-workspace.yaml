@@ -2,3 +2,12 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+overrides:
+  # Ensure transitive postcss is patched (Dependabot advisory < 8.5.10)
+  postcss@<8.5.10: ^8.5.10
+  # Pin packages that were published within Amplify's minimumReleaseAge
+  # supply-chain window (24h). These resolve to "latest" otherwise and
+  # broke the deploy with ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION.
+  electron-to-chromium: 1.5.376
+  node-releases: 2.0.48
+  '@napi-rs/wasm-runtime': 1.1.5
