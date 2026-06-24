@@ -10,6 +10,7 @@ interface Project {
   tech: string[];
   link?: string;
   github?: string;
+  appStore?: string;
 }
 
 const professionalWork: Project[] = [
@@ -73,6 +74,7 @@ const sideProjects: Project[] = [
     tech: ['TypeScript', 'HTML5 Canvas', 'Vite', 'Firebase', 'Capacitor', 'Tone.js', 'PWA'],
     link: 'https://serpentsurge.vercel.app/',
     github: 'https://github.com/tshields86/serpent-surge',
+    appStore: 'https://apps.apple.com/us/app/serpent-surge/id6761081725',
   },
   {
     name: 'BBQCopilot',
@@ -136,6 +138,19 @@ function ProjectCard({ project, index, isInView }: { project: Project; index: nu
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+          )}
+          {project.appStore && (
+            <a
+              href={project.appStore}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label={`Download ${project.name} on the App Store`}
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.05 12.04c-.03-2.66 2.17-3.94 2.27-4-1.24-1.81-3.16-2.06-3.84-2.09-1.63-.16-3.18.96-4.01.96-.82 0-2.1-.94-3.45-.91-1.78.03-3.42 1.03-4.33 2.62-1.85 3.21-.47 7.96 1.32 10.56.88 1.27 1.92 2.7 3.29 2.65 1.32-.05 1.82-.85 3.42-.85 1.59 0 2.04.85 3.44.83 1.42-.03 2.32-1.3 3.19-2.58 1.01-1.48 1.42-2.91 1.44-2.99-.03-.01-2.76-1.06-2.79-4.2zM14.4 4.33c.73-.89 1.22-2.12 1.08-3.34-1.05.04-2.32.7-3.07 1.58-.67.78-1.26 2.03-1.1 3.23 1.17.09 2.36-.59 3.09-1.47z" />
               </svg>
             </a>
           )}
