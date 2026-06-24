@@ -44,7 +44,7 @@ export function Contact() {
 
       setSubmitStatus('success');
       reset();
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -69,10 +69,10 @@ export function Contact() {
               &gt; Get In Touch
             </p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              I'm always interested in hearing about new opportunities, interesting projects,
+              I&apos;m always interested in hearing about new opportunities, interesting projects,
               or just having a conversation about engineering leadership.
             </p>
           </div>

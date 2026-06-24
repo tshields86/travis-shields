@@ -19,7 +19,7 @@ export function Hero() {
             transition={{ delay: 0.2 }}
             className="text-blue-600 dark:text-blue-400 font-mono text-sm"
           >
-            &gt; Hello, I'm
+            &gt; Hello, I&apos;m
           </motion.p>
 
           {/* Name */}

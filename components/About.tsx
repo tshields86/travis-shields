@@ -53,8 +53,8 @@ export function About() {
 
             <p>
               My leadership approach centers on <strong>developing technical leaders</strong> who own
-              architecture and decision-making autonomously. I've mentored engineers to win Director's
-              Cut awards for transformational work. I've also pioneered{' '}
+              architecture and decision-making autonomously. I&apos;ve mentored engineers to win Director&apos;s
+              Cut awards for transformational work. I&apos;ve also pioneered{' '}
               <strong>AI-accelerated development workflows</strong> using GitHub Copilot and Claude
               Code, boosting engineer velocity and paving the way for agentic coding initiatives.
             </p>
@@ -68,7 +68,7 @@ export function About() {
             </p>
 
             <p>
-              I'm committed to fostering cultures of ownership, excellence, and continuous innovation
+              I&apos;m committed to fostering cultures of ownership, excellence, and continuous innovation
               where engineers thrive and deliver extraordinary results.
             </p>
           </div>
