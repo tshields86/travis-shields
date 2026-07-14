@@ -2,13 +2,26 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        bone: "var(--bone)",
+        ink: "var(--ink)",
+        cobalt: "var(--cobalt)",
+        peach: "var(--peach)",
+        line: "var(--line)",
+        muted: "var(--muted)",
+        paragraph: "var(--paragraph)",
+      },
+      fontFamily: {
+        display: "var(--disp)",
+        body: "var(--body)",
+        mono: "var(--mono)",
+      },
+    },
   },
   plugins: [],
 };
