@@ -10,7 +10,9 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="wrap bar">
-        <span className="sig">Travis Shields</span>
+        <a href="#top" className="sig" aria-label="Travis Shields — back to top">
+          Travis Shields
+        </a>
         <nav className="site-nav" aria-label="Primary">
           {navLinks.map(({ href, label, hideOnMobile }) => (
             <a key={href} href={href} className={hideOnMobile ? "hide" : undefined}>

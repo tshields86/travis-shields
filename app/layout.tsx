@@ -58,7 +58,7 @@ export default function RootLayout({
           <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
       </head>
-      <body>
+      <body id="top">
         <Header />
         {children}
         <Footer />
