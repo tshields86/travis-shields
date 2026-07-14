@@ -4,22 +4,21 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+// Loaded as variable fonts so the full weight range — and Bricolage's optical
+// sizing axis — apply, matching the mock's Google Fonts request.
 const display = Bricolage_Grotesque({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
 });
 
 const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
 });
 
 const mono = Spline_Sans_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -52,8 +51,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <head>
+        {/* Without JS, scroll-reveal wrappers never animate in — force them visible. */}
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+      </head>
+      <body>
         <Header />
         {children}
         <Footer />
