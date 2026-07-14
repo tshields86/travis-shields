@@ -1,10 +1,23 @@
+import { social } from "@/lib/content";
+
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800 py-8">
-      <div className="container mx-auto px-6 text-center text-sm text-gray-600 dark:text-gray-400">
-        <p>© {currentYear} Travis Shields. All rights reserved.</p>
+    <footer className="site-footer">
+      <div className="wrap">
+        <span className="mono">© {year} Travis Shields · Open to new roles</span>
+        <span>
+          <a href={social.github} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>{" "}
+          ·{" "}
+          <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>{" "}
+          ·{" "}
+          <a href={`mailto:${social.email}`}>Email</a>
+        </span>
       </div>
     </footer>
   );
