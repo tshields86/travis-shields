@@ -1,125 +1,58 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useState } from "react";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
+import { skillCategories } from "@/lib/content";
 
-const skills = {
-  'Leadership & Strategy': [
-    'Engineering Leadership',
-    'Team Development',
-    'Technical Roadmapping',
-    'Cross-Functional Collaboration',
-    'Agile/Scrum',
-    'Mentoring & Coaching',
-  ],
-  'Tools & AI': [
-    'Claude Code',
-    'GitHub Copilot',
-    'AI-Accelerated Development',
-    'Docker',
-    'GitHub Actions',
-    'Datadog',
-  ],
-  'Platform & Architecture': [
-    'Platform Modernization',
-    'Microservices',
-    'Micro-Frontends',
-    'Design Systems',
-    'CI/CD Pipelines',
-    'Cloud Infrastructure (AWS, GCP)',
-  ],
-  'Frontend Technologies': [
-    'Next.js',
-    'React',
-    'TypeScript',
-    'JavaScript',
-    'Tailwind CSS',
-    'Storybook',
-  ],
-  'Backend & Data': [
-    'Node.js',
-    'GraphQL',
-    'RESTful APIs',
-    'NoSQL/SQL',
-    'AWS Lambda',
-    'Elasticsearch',
-  ],
-  'Experimentation & Analytics': [
-    'A/B Testing Frameworks',
-    'Eppo Platform',
-    'Data-Driven Optimization',
-    'RUM & Performance Monitoring',
-    'Amplitude',
-    'Conversion Optimization',
-  ],
-};
+const MOBILE_QUERY = "(max-width: 560px)";
 
 export function Skills() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  // Accordions are collapsed on mobile and all-open on larger screens.
+  const [openStates, setOpenStates] = useState<boolean[]>(() =>
+    skillCategories.map(() => true),
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_QUERY);
+    const sync = () => setOpenStates(skillCategories.map(() => !mq.matches));
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   return (
-    <section id="skills" ref={ref} className="py-24 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Section Header */}
-          <div className="mb-16 text-center">
-            <p className="text-blue-600 dark:text-blue-400 font-mono text-sm mb-2">
-              &gt; Expertise
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Skills & Technologies
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              A comprehensive toolkit for building modern platforms and leading high-performing teams
-            </p>
-          </div>
-
-          {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(skills).map(([category, items], categoryIndex) => (
-              <motion.div
-                key={category}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+    <section className="section" id="skills">
+      <div className="wrap">
+        <Reveal>
+          <SectionHeading number="02" title="Skills & Technologies" />
+          <div className="caps">
+            {skillCategories.map((category, index) => (
+              <details
+                key={category.title}
+                className={category.featured ? "cap cap-feat" : "cap"}
+                open={openStates[index]}
+                onToggle={(event) => {
+                  const next = event.currentTarget.open;
+                  setOpenStates((prev) =>
+                    prev.map((value, i) => (i === index ? next : value)),
+                  );
+                }}
               >
-                <h3 className="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">
-                  {category}
-                </h3>
-                <ul className="space-y-2">
-                  {items.map((skill) => (
-                    <li
-                      key={skill}
-                      className="flex items-start text-gray-700 dark:text-gray-300"
-                    >
-                      <svg
-                        className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <span className="text-sm">{skill}</span>
-                    </li>
+                <summary>
+                  <h3>{category.title}</h3>
+                  <p className="blurb">{category.blurb}</p>
+                  <span className="ind" aria-hidden="true" />
+                </summary>
+                <ul className="list">
+                  {category.items.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </motion.div>
+              </details>
             ))}
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );
