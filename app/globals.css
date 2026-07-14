@@ -51,6 +51,13 @@ body {
   text-transform: uppercase;
 }
 
+/* Inline icon (18px glyph inside a ≥44px tap target). */
+.ic {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 :focus-visible {
   outline: 2px solid var(--cobalt);
   outline-offset: 3px;
@@ -223,12 +230,15 @@ body {
 }
 .social {
   display: flex;
-  gap: 4px;
-  margin-left: -8px;
+  margin-left: -13px;
 }
 .social a {
   display: inline-flex;
-  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 13px;
   color: var(--ink);
 }
 .social a:hover {
@@ -438,13 +448,16 @@ body {
 /* Shared icon-link cluster (professional + side project cards) */
 .links {
   display: flex;
-  gap: 2px;
   flex-shrink: 0;
-  margin: -8px -8px -8px 0;
+  margin: -13px -13px -13px 0;
 }
 .links a {
   display: inline-flex;
-  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 13px;
   color: var(--icon);
   transition: 0.15s;
 }
