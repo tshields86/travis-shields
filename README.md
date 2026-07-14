@@ -1,19 +1,17 @@
 # Travis Shields
 
-Personal portfolio website for Travis Shields, Director of Engineering at Vimeo.
+Personal portfolio website for Travis Shields — engineering leader, most recently Director of Engineering at Vimeo. Built in the "Studio Poster" visual direction (single light theme).
 
 **Live Site:** [travis-shields.com](https://www.travis-shields.com/)
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 with App Router
+- **Framework:** Next.js 15 with App Router (static export)
 - **UI Library:** React 19
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS v3
-- **Animations:** Framer Motion
-- **Theme:** next-themes (dark/light mode)
-- **Forms:** React Hook Form + Zod validation
-- **Fonts:** Geist Sans & Geist Mono
+- **Styling:** Tailwind CSS v3 + design tokens as CSS variables (single light theme)
+- **Animations:** Framer Motion (scroll reveals)
+- **Fonts:** Bricolage Grotesque, Inter, Spline Sans Mono (via `next/font/google`)
 - **Deployment:** AWS Amplify
 
 ## Prerequisites
@@ -59,18 +57,21 @@ pnpm run lint
 
 ```
 app/
-  layout.tsx          # Root layout with theme provider
+  layout.tsx          # Root layout: fonts, metadata, Header + Footer
   page.tsx            # Home page
-  globals.css         # Global styles + Tailwind config
+  globals.css         # Design tokens (CSS vars) + Studio Poster style system
 components/
+  Header.tsx          # Sticky wordmark + mono nav
   Hero.tsx            # Landing section
-  About.tsx           # Professional background
-  Skills.tsx          # Technical skills
-  Contact.tsx         # Contact form
-  Header.tsx          # Navigation header
+  Marquee.tsx         # Full-bleed metric band
+  About.tsx           # Narrative + stats
+  Skills.tsx          # Capability grid (mobile accordion)
+  Projects.tsx        # Professional Work + Side Projects
+  Contact.tsx         # Dark "Say Hello" CTA
   Footer.tsx          # Footer
-  ThemeProvider.tsx   # Theme context
-  ThemeToggle.tsx     # Dark/light mode toggle
+  ui/                 # Reusable primitives (Icon, IconLink, SectionHeading, Pill, Reveal)
+lib/
+  content.ts          # Typed content data
 ```
 
 ## Deployment
@@ -79,4 +80,4 @@ This site is automatically deployed via AWS Amplify on push to the `master` bran
 
 ## License
 
-© 2025 Travis Shields. All rights reserved.
+© 2026 Travis Shields. All rights reserved.

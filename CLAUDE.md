@@ -8,7 +8,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Travis Shields (Director of Engineering at Vimeo) built with Next.js 15, React 19, TypeScript, and Tailwind CSS v3. Deployed via AWS Amplify.
+Personal portfolio website for Travis Shields (engineering leader, most recently Director of Engineering at Vimeo) built with Next.js 15, React 19, TypeScript, and Tailwind CSS v3. Single light theme in the "Studio Poster" visual direction. Deployed via AWS Amplify.
+
+The approved design reference lives in `mocks/studio-poster-mock.html` (pixel source of truth); the rebuild brief is `docs/redesign-spec.md` and the content reference is `docs/resume.md`. These are intentional references — keep them.
 
 ## Development Commands
 
@@ -35,75 +37,78 @@ pnpm run lint
 ## Architecture
 
 ### Tech Stack
-- **Framework**: Next.js 15 with App Router
+- **Framework**: Next.js 15 with App Router (static export — `output: 'export'`)
 - **UI Library**: React 19
-- **Styling**: Tailwind CSS v3
-- **Animations**: Framer Motion
-- **Theme Management**: next-themes (class-based dark mode)
-- **Forms**: React Hook Form + Zod validation
-- **Fonts**: Geist Sans & Geist Mono (via next/font)
+- **Styling**: Tailwind CSS v3 + design tokens as CSS variables (single light theme)
+- **Animations**: Framer Motion (scroll reveals only)
+- **Fonts**: Bricolage Grotesque (display), Inter (body), Spline Sans Mono (mono/labels) via `next/font/google`
 - **Deployment**: AWS Amplify (configured in `amplify.yml`)
 
 ### Project Structure
 ```
 app/
-  layout.tsx          # Root layout with ThemeProvider, fonts, metadata
-  page.tsx            # Home page (renders Hero, About, Skills, Contact)
-  globals.css         # Global styles + Tailwind dark mode config
+  layout.tsx          # Root layout: fonts, metadata, Header + Footer
+  page.tsx            # Home page (Hero, Marquee, About, Skills, Projects, Contact)
+  globals.css         # Design tokens (CSS vars) + the "Studio Poster" style system
 components/
-  ThemeProvider.tsx   # next-themes wrapper
-  ThemeToggle.tsx     # Dark/light mode toggle button
-  Header.tsx          # Fixed header with navigation
-  Hero.tsx            # Landing section
-  About.tsx           # Professional story + key achievements
-  Skills.tsx          # Categorized technical skills
-  Contact.tsx         # Contact form + contact info cards
-  Footer.tsx          # Copyright footer
+  Header.tsx          # Sticky blurred wordmark + mono nav
+  Hero.tsx            # Meta bar, giant display name, role subline, CTAs
+  Marquee.tsx         # Full-bleed cobalt metric band
+  About.tsx           # Display narrative + 3 paragraphs + 3-up stat row
+  Skills.tsx          # 3x2 capability grid; details/summary accordion on mobile
+  Projects.tsx        # Professional Work (03) + Side Projects (04) cards
+  Contact.tsx         # Full-bleed dark "Say Hello" CTA
+  Footer.tsx          # Full-bleed footer with copyright + links
+  ui/                 # Reusable typed primitives:
+    Icon.tsx          #   inline SVG icon set (external, github, appStore, mail, linkedin)
+    IconLink.tsx      #   icon-only link with aria-label + >=44px tap target
+    SectionHeading.tsx#   mono number + uppercase h2 + rule
+    Pill.tsx          #   tech tag (Pill) + PillList
+    Reveal.tsx        #   scroll-into-view fade/rise, respects prefers-reduced-motion
+lib/
+  content.ts          # Typed content data (skills, work, side projects, metrics, stats, social)
 ```
 
 ### Key Architectural Patterns
 
 **Module Aliases**: TypeScript path mapping uses `@/*` for root-level imports (configured in `tsconfig.json`).
 
-**Client Components**: All components use `'use client'` directive due to interactivity requirements (Framer Motion animations, theme toggle, form handling).
+**Server vs Client Components**: Components are server components by default. Only `Skills` (media-query-driven accordion) and `Reveal` (Framer Motion) use `'use client'`.
 
-**Animation Strategy**: Framer Motion's `useInView` hook triggers animations when sections scroll into viewport (`once: true, margin: '-100px'`).
+**Content as Data**: Skills, professional work, side projects, metrics and stats are typed data structures in `lib/content.ts`, rendered by thin components — no copy-paste of markup. No `any`.
 
-**Theme System**:
-- Uses `next-themes` with `attribute="class"` mode
-- Tailwind CSS v3 configured with `darkMode: "class"` in `tailwind.config.ts`
-- Theme persists in localStorage
-- Components use `dark:` variant for styling (e.g., `dark:bg-gray-950`)
-
-**Form Handling**: Contact form uses React Hook Form with Zod schema validation, opens email client with pre-filled message on submit.
+**Animation Strategy**: `Reveal` wraps section content and uses Framer Motion's `useInView` (`once: true, margin: '-100px'`); it renders statically under `prefers-reduced-motion`. The marquee is a CSS animation, also disabled under reduced motion.
 
 **Smooth Scrolling**: Header navigation links use `#` anchors; smooth scroll enabled via `scroll-behavior: smooth` in `globals.css`.
 
+**Accessibility**: Exactly one `<h1>` (hero name); logical `<h2>`/`<h3>` order; visible `:focus-visible` rings (cobalt, coral on dark/featured surfaces); keyboard-operable native `<details>` accordion; no horizontal scroll at any width.
+
 ## Styling Conventions
 
-### Tailwind CSS v3 Configuration
-- Standard Tailwind directives in `globals.css`: `@tailwind base; @tailwind components; @tailwind utilities;`
-- Config file: `tailwind.config.ts` with content paths and `darkMode: "class"`
-- PostCSS config uses `tailwindcss` and `autoprefixer` plugins
+### Design tokens & the style system
+- Tailwind directives + all design tokens live in `globals.css`. Tokens are CSS variables on `:root` (single light theme, no `.dark` overrides).
+- The "Studio Poster" component classes (`.wrap`, `.shead`, `.cap`, `.pcard`, `.card`, `.band`, etc.) are defined in `globals.css` and route every color through a token — no magic hex in components.
+- `tailwind.config.ts` maps tokens to Tailwind color/font names (`bone`, `ink`, `cobalt`, `peach`, `line`, `muted`, `paragraph`; `font-display`, `font-body`, `font-mono`). No `darkMode`.
+- PostCSS config uses `tailwindcss` and `autoprefixer` plugins.
 
-### Color Palette
-- Primary: Blue (blue-600/blue-400 for dark mode)
-- Backgrounds: white/gray-50 (light), gray-950/gray-900 (dark)
-- Text: gray-900 (light), gray-100 (dark)
-- Borders: gray-200 (light), gray-700/gray-800 (dark)
+### Color palette (tokens)
+- `--bone #F3F0E9` page background · `--ink #141210` text/borders · `--cobalt #1F35E0` primary accent/links/featured
+- `--peach #FF6B4A` secondary accent + focus ring on dark surfaces · `--line #DAD5C8` dividers
+- `--muted #5A544A` labels/blurbs · `--paragraph #3A352D` body copy · `--tag-border #B6AD9C` pill outlines
 
-### Component Patterns
-- Section spacing: `py-24 px-6`
-- Max width container: `max-w-6xl` or `max-w-4xl` with `mx-auto`
-- Card styling: rounded borders with hover states for interactive elements
-- Responsive grids: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`
+### Motifs
+- 2px solid ink borders; zero border-radius on structural elements.
+- Section headings: mono number (`01`…) + big uppercase title + 2px bottom rule (`SectionHeading`).
+- Full-bleed elements (marquee, dark contact, footer rule) span the viewport; content stays inside a centered `.wrap` (`max-width:1200px`, `28px` side padding). Put `.wrap` on an inner wrapper, never on the full-bleed element.
+- Card hover: `translate(-3px,-3px)` + `5px 5px 0 var(--cobalt)` offset shadow.
+- Section vertical rhythm: 64px top/bottom (`.section`).
 
 ## Deployment
 
 AWS Amplify configuration (`amplify.yml`):
 - Pre-build: Installs Node v24.11.0 via nvm, installs pnpm globally
-- Build: `pnpm run build`
-- Artifacts: `.next` directory with caching for `.next/cache` and `node_modules`
+- Build: `pnpm run build` (Next.js static export)
+- Artifacts: `out/` directory, with caching for `.next/cache` and `node_modules`
 - Automatic deploys from GitHub repository
 
 ## Node Version Management
