@@ -135,6 +135,7 @@ export const professionalWork: WorkItem[] = [
     tech: [
       "Next.js",
       "React",
+      "Node.js",
       "TypeScript",
       "Tailwind CSS",
       "Builder.io",
