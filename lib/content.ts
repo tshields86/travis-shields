@@ -154,7 +154,18 @@ export const professionalWork: WorkItem[] = [
     name: "WeWork Employee Platforms",
     description:
       "Managed eight engineers building internal apps and microservices. Led a micro-frontend proof-of-concept that eliminated cross-team dependencies, and launched a check-in management tool that drove a 140% increase in Net Promoter Scores.",
-    tech: ["React", "TypeScript", "Ruby on Rails", "Microservices", "Micro-Frontends", "AWS"],
+    tech: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Ruby on Rails",
+      "Redis",
+      "RabbitMQ",
+      "Algolia",
+      "Microservices",
+      "Micro-Frontends",
+      "AWS",
+    ],
     links: [],
   },
   {
